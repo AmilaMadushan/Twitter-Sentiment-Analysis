@@ -8,10 +8,11 @@ import json
 #authentication
 consumer_key = "CONSUMER KEY"
 consumer_secret = "SECRET KEY"
+#oAuthA authentication for twitter
 auth = tweepy.OAuthHandler(consumer_key=consumer_key, consumer_secret=consumer_secret)
 api = tweepy.API(auth)
 
-
+#getting results to a list
 results = []
 for tweet in tweepy.Cursor(api.search, q="alienware",rpp=50,locale='en').items(100):
     results.append(tweet)
